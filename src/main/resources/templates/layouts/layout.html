@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="">
+  <meta name="chandrika" content="O. Chandrika">
+  <link rel="icon" href="favicon.ico">
+  <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.2/cerulean/bootstrap.min.css" rel="stylesheet" integrity="sha384-EmRcsPP774S9MOi4ywB+JXUWjYnBdyInMzG2XsC5siZEUpexqxOMJW358dCYEjPu" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/master.css}">
+  <title th:text="${pageTitle}">eRegistrar</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/eregistrar/home">eRegistrar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/eregistrar/home">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/eregistrar/students">List of Students</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/eregistrar/new">Register a New Student</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container-fluid mt-5">
+  <!-- Content will be injected here -->
+  <div th:replace="${contentFragment} :: content"></div>
+</div>
+</body>
+</html>
