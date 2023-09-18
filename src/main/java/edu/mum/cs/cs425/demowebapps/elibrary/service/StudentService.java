@@ -8,7 +8,9 @@ public interface StudentService {
     List<Student> fetchStudents();
     Student updateDepartment(Student student,
                                 Long studentId);
-    void deleteDepartmentById(Long studentId);
+    void deleteStudentById(Long studentId);
+    Student findStudentById(Long studentId);
+    List<Student> searchStudentsByText(String searchText);
 }
 
 

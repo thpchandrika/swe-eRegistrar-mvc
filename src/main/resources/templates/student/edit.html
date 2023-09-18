@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="description" content="">
   <meta name="chandrika" content="O. Chandrika">
   <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.2/cerulean/bootstrap.min.css" rel="stylesheet" integrity="sha384-EmRcsPP774S9MOi4ywB+JXUWjYnBdyInMzG2XsC5siZEUpexqxOMJW358dCYEjPu" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" th:href="@{/css/master.css}">
-    <title>Student Registration</title>
+    <title>Update Student</title>
 </head>
 <body>
 <header>
@@ -35,8 +36,9 @@
 <div class="container">
   <div  class="row justify-content-center">
     <div class="col-5">
-      <h1>Register New Student</h1>
-      <form method="post" th:action="@{/eregistrar/students/save}" th:object="${student}" class="container mt-5">
+      <h1>Update Student</h1>
+      <form method="post" th:action="@{/eregistrar/students/saveUpdatedStudent}" th:object="${student}" class="container mt-5">
+        <input type="hidden" th:field="*{studentId}" />
         <div class="form-group">
           <label for="studentNumber">Student Number</label>
           <input type="text" class="form-control" id="studentNumber" th:field="*{studentNumber}"  required>

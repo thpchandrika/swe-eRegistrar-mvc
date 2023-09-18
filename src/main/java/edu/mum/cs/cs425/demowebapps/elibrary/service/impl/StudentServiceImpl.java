@@ -44,7 +44,17 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public void deleteDepartmentById(Long studentId) {
+    public void deleteStudentById(Long studentId) {
         repository.deleteById(studentId);
+    }
+
+    @Override
+    public Student findStudentById(Long studentId) {
+        return repository.findById(studentId).get();
+    }
+
+    @Override
+    public List<Student> searchStudentsByText(String searchText) {
+        return repository.findByStudentNumberIgnoreCaseContainingOrFirstNameIgnoreCaseContainingOrMiddleNameIgnoreCaseContainingOrLastNameIgnoreCaseContaining(searchText, searchText, searchText, searchText);
     }
 }

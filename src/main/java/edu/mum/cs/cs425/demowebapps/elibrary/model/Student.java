@@ -3,11 +3,9 @@ package edu.mum.cs.cs425.demowebapps.elibrary.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
@@ -17,6 +15,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class Student {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long studentId;
     @Column(nullable = false)
     private String studentNumber;
@@ -29,5 +28,16 @@ public class Student {
     @Column(nullable = false)
     private double cgpa;
     @Column(nullable = false)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate dateOfEnrollment;
+    @Column(nullable = false)
+    private boolean isInternational;
+
+    public  boolean getIsInternational(){
+        return this.isInternational;
+    }
+
+    public  void setIsInternational(boolean isInternational){
+       this.isInternational = isInternational;
+    }
 }
