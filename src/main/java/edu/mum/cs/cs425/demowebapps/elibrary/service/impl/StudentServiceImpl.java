@@ -27,7 +27,7 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public Student updateDepartment(Student student, Long studentId) {
+    public Student updateStudent(Student student, Long studentId) {
         Optional<Student> existingStudentOptional = repository.findById(studentId);
         if (existingStudentOptional.isPresent()) {
             Student existingStudent = existingStudentOptional.get();
